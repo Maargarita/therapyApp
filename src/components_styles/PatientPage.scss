@@ -1,0 +1,134 @@
+@use '../util' as u;
+
+.patient-page{
+	display: flex;
+	align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+
+    &__nav-bar{
+        @include u.nav-bar;
+    }
+    
+
+    &__container{
+        padding-bottom: u.rem(15);
+        padding-top: u.rem(55);
+    }
+
+    &__link{
+        @include u.link;
+        
+        &:hover{
+            @include u.link__hover;
+        }
+    }
+
+    &__main-title{
+        font-size: u.rem(28);
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    
+        &__label{
+            margin-top: u.rem(10);
+        }
+
+        &__input-text, &__input-textarea, .react-date-picker__wrapper{
+            width: 100%;
+            padding: u.rem(5);
+
+            &.error{
+                @include u.error_border;
+            }
+        }
+
+        &__submit{
+            @include u.button;
+            width: 100%;
+        
+            &:hover{
+                @include u.hover;
+            }      
+        }
+    }
+    
+    .errorbox{
+        @include u.errorbox;
+ 
+         &__text{
+             @include u.errorbox__text;
+ 
+             &__item{
+                 @include u.errorbox__text__item;
+             }
+         }
+     }
+
+    .form-success{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+        padding: 0 u.rem(20);
+        background-color: u.$main-color;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        background-color: rgba(0,0,0,.8);
+
+        &__body{
+	        position: relative;
+        	top: 0;
+            left: auto;
+            right: auto;
+            padding: u.rem(40) u.rem(20);
+            width: 100%;
+            max-width: u.rem(1240);
+            background-color: u.$main-color;
+
+            &__success, &__error{
+                padding-top: u.rem(70);
+                padding-bottom: u.rem(70);
+                text-align: center;
+                background: u.$success;
+                color: u.$main-color;
+                font-size: u.rem(18);
+            } 
+
+            &__error{
+                background: u.$error;
+            }
+        }
+
+        &__area{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            right: u.rem(20);
+            top: 0;
+            cursor: pointer;
+        }
+    
+        &__close{
+            position: fixed;
+            right: u.rem(30);
+            top: 0;
+            width: u.rem(23);
+            height: u.rem(23);
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            z-index: 2;
+            font-size: u.rem(34);  
+            color: u.$main-color; 
+        }
+    }
+}

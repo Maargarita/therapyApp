@@ -1,0 +1,21 @@
+@use '../../util' as u;
+
+.application{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 u.rem(15);
+
+    &__title{
+        font-size: u.rem(28);
+    }
+    
+    &__button{
+        @include u.button;
+
+        &:hover{
+            @include u.hover;
+        }
+    }
+}

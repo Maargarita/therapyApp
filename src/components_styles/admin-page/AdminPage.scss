@@ -1,0 +1,22 @@
+@use '../../util' as u;
+
+.admin-page{
+
+    &__nav-bar{
+        @include u.nav-bar;
+    }
+
+    &__container{
+        padding-bottom: u.rem(15);
+        padding-top: u.rem(55);
+    }
+
+    &__link{
+        @include u.link;
+        margin-right: u.rem(10);
+        
+        &:hover{
+            @include u.link__hover;
+        }
+    }   
+}

@@ -1,0 +1,23 @@
+@use '../util' as u;
+
+.main-page{
+    height: 100vh;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &__text{
+        margin-bottom: u.rem(20);
+    }
+
+    &__link{
+        @include u.button;
+        font-size: u.rem(18);
+        margin: 0 u.rem(10);
+        
+        &:hover{
+            @include u.hover;
+        }
+    }
+}

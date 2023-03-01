@@ -1,0 +1,21 @@
+@use './colors' as c;
+@use './functions' as f;
+
+@mixin button{
+    background: none;
+    padding: f.rem(10) 2rem;
+    border-radius: f.rem(20);
+    border: 1px solid c.$secondary-color;
+    color: c.$secondary-color;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: f.rem(15);
+    margin-top: 1rem;
+}
+
+@mixin hover{
+    transform: scale(110%);
+    transition: 1s ease-in-out;
+    color: c.$main-color;
+    background: c.$secondary-color;
+}

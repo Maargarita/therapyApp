@@ -1,0 +1,24 @@
+@use './colors' as c;
+@use './functions' as f;
+
+@mixin nav-bar{
+    width: 100%;
+    height: f.rem(50);
+    border-bottom: 1px solid c.$secondary-color;
+    position: fixed;
+    background: c.$main-color;
+    text-align: left;
+    padding-left: f.rem(20);
+    padding-top: f.rem(15);
+}
+
+@mixin link{
+    color: c.$secondary-color;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@mixin link__hover{
+    text-decoration: underline;
+}

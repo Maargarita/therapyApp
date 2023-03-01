@@ -1,0 +1,54 @@
+@use '../../util' as u;
+
+.application-info{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 0 u.rem(20);
+    background-color: rgba(0,0,0,.8);
+    z-index: 2;
+    cursor: default;
+    
+    &__area{
+	    position: fixed;
+    	width: 100%;
+	    height: 100%;
+    	right: u.rem(20);
+        top: 0;
+        cursor: pointer;
+    }
+
+    &__close{
+    	position: fixed;
+        right: u.rem(30);
+        top: 0;
+        width: u.rem(23);
+        height: u.rem(23);
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        z-index: 2;
+        font-size: u.rem(34); 
+        color: u.$main-color;  
+    }
+
+    .body{
+    	position: relative;
+        padding: u.rem(40);
+	    margin: u.rem(65) auto;
+        width: 100%;
+        max-width: u.rem(560);
+        min-height: u.rem(300);
+        background-color: u.$main-color;
+        overflow: auto;
+
+        &__title, &__complaint, &__text{
+            margin-bottom: u.rem(10);
+        }
+    }
+}
